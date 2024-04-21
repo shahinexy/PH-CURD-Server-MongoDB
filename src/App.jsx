@@ -10,6 +10,17 @@ function App() {
     const email = form.email.value;
     const neWuser = { name, email };
     console.log(neWuser);
+    fetch('http://localhost:4000/users',{
+      method: "POST",
+      headers:{
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(neWuser)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
   }
 
   return (
