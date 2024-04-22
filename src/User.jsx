@@ -33,6 +33,9 @@ const User = () => {
         <div key={user._id}>
           <p>
             Name: {user.name}. ||  Email: {user.email}{" "}
+            <Link to={`/updateUser/${user._id}`}>
+            <button>Update User</button>
+            </Link>
             <button onClick={() => handleDelete(user._id)}>Delete</button>
           </p>
         </div>
